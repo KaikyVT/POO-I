@@ -6,8 +6,8 @@ public class Main {
     public static void main(String[] args) {
         
         Scanner scan = new Scanner(System.in);
-        int opcao;
-        
+        int opcao = 7;
+        while(opcao != 0){
         System.out.println("====================");
         System.out.println("\tMENU");
         System.out.println("1- Adição(+)");
@@ -21,23 +21,30 @@ public class Main {
         
         System.out.printf("O número selecionado é: %d\n\n", opcao);
         
-        if (opcao == 0){
-            System.out.println("Tchauzinho, até a próxima :D");
+        switch(opcao){
+            case 0:
+                System.out.println("Okay, tchauzinho...");
+                break;
+            case 1:
+                System.out.println("Você vai somar!");
+                break;
+            case 2: 
+                System.out.println("Você vai subtrair!");
+                break;
+            case 3:
+                System.out.println("Você vai multiplicar!");
+                break;
+            case 4:
+                System.out.println("Você vai dividir!");
+                break;
+            default:
+                System.out.println("Valor inválido");
+                break;
+                
         }
-        else if (opcao == 1){
-            System.out.println("Vamos somar!");    
-            }
-        else if (opcao == 2){
-            System.out.println("Vamos subtrair!");    
+            
         }
-        else if (opcao == 3){
-            System.out.println("Vamos multiplicar!");         
-        }
-        else if (opcao == 4){
-            System.out.println("Vamos dividir!");    
-        }
-        else{
-            System.out.println("Opa, esse valor é inválido! Insira outro valor, por favor :P");    
-        }
+        scan.close();     
     }
+
 }
