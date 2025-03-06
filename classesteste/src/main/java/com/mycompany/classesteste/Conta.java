@@ -3,10 +3,11 @@ import java.util.Scanner;
 
 public class Conta {
     int numero;
-    String nome;
-    double limite;
+    Cliente dono = new Cliente();
     double saldo;
+    double limite;
 
+    Cliente titular;
     
     boolean Sacar(Scanner scan){
         System.out.printf("Quanto quer sacar? ");
@@ -42,3 +43,4 @@ public class Conta {
 
     }
 }
+
