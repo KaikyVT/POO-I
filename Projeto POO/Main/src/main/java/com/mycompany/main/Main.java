@@ -16,16 +16,8 @@ public class Main {
     
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        Aluno aluno1 = new Aluno("Kaiky", "Ciências da Computação", "CC3MB", 3);
-        aluno1.getEnrollment();
-        aluno1.getName();
-        aluno1.getCourse();
-        aluno1.getGroup();
-        aluno1.getGrade1();
-        aluno1.getGrade2();
-        aluno1.getFinalGrade();
-        printInfo(aluno1);
-        
+        Aluno teste = new Aluno(scan); 
+        teste.getEnrollment();
         
     }
 }
