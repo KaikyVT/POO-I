@@ -1,0 +1,9 @@
+com\mycompany\baldursgate\ILutador.class
+com\mycompany\baldursgate\Arma.class
+com\mycompany\baldursgate\CriaturaHostil.class
+com\mycompany\baldursgate\CriaturaPacifica.class
+com\mycompany\baldursgate\Entidade.class
+com\mycompany\baldursgate\Armadura.class
+com\mycompany\baldursgate\Item.class
+com\mycompany\baldursgate\PersonagemJogador.class
+com\mycompany\baldursgate\Main.class
