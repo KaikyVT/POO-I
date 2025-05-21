@@ -6,27 +6,35 @@ import java.util.List;
 public class Videogame {
 
     double preco;
-    String Componentes;
+    String componentes;
     List<String> exclusivos = new ArrayList();
 
     public Videogame(double preco, String componentes) {
         this.preco = preco;
-        this.Componentes = componentes;
+        this.componentes = componentes;
     }
 
     public void addExclusivo(String e) {
         exclusivos.add(e);
     }
-
+    
+    public void detalhes(){
+        System.out.println("Console: " + this.getClass().getSimpleName());
+        System.out.println("Preço: R$" + preco);
+        System.out.println("Componentes: " + componentes);
+        printarExclusivos();
+    }
+    
     public void printarExclusivos() {
-        System.out.println("\nEXCLUSIVOS");
+        System.out.println("EXCLUSIVOS");
         for (int i = 0; i < exclusivos.size(); i++) {
             String s = exclusivos.get(i);
             System.out.println("[" + i + "]" + s);
         }
+        System.out.println("\n");
     }
 
-    public boolean jogarJogo(int index) {
+    public boolean jogarJogo(int index, int tempo) {
         if (index > exclusivos.size() || index < 0) {
             System.out.println("Jogo inválido...");
             return false;

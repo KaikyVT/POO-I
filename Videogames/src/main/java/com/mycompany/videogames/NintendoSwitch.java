@@ -32,9 +32,11 @@ public class NintendoSwitch extends Videogame implements ControleMovimento, Port
     @Override
     public void checaBateria() {
         System.out.println("Status da bateria: " + bateria + "%");
-        if (bateria <= 15) {
-            System.out.println("Seria interessante colocar no Dock Mode...");
-        } else {
+        if (bateria == 0) {
+            System.out.println("Sem bateria.");
+        }else if (bateria <= 15){
+            System.out.println("Bateria fraca. Coloque no Dock Mode");
+        }else {
             System.out.println("Bateria em dia, aproveite!");
         }
     }
@@ -51,7 +53,7 @@ public class NintendoSwitch extends Videogame implements ControleMovimento, Port
     }
 
     @Override
-    public boolean jogarJogo(int index) {
+    public boolean jogarJogo(int index, int tempo) {
         if (index > exclusivos.size() || index < 0) {
             System.out.println("Jogo inválido...");
             return false;
@@ -61,7 +63,7 @@ public class NintendoSwitch extends Videogame implements ControleMovimento, Port
         } else {
             System.out.println("Jogo escolhido: " + exclusivos.get(index));
             if (modo.equals("Portátil")) {
-                bateria -= 10;
+                bateria -= (5 * tempo);
             }
             return true;
         }

@@ -12,9 +12,11 @@ public class Psvita extends Videogame implements Portatil {
     @Override
     public void checaBateria() {
         System.out.println("Status da bateria: " + bateria + "%");
-        if (bateria <= 15) {
-            System.out.println("Seria interessante colocar no cabo...");
-        } else {
+        if (bateria == 0) {
+            System.out.println("Sem bateria.");
+        }else if (bateria <= 15){
+            System.out.println("Bateria fraca.");
+        }else {
             System.out.println("Bateria em dia, aproveite!");
         }
     }
@@ -31,7 +33,11 @@ public class Psvita extends Videogame implements Portatil {
     }
 
     @Override
-    public boolean jogarJogo(int index) {
+    public boolean jogarJogo(int index, int tempo) {
+        if (modo.equals("Controle")) {
+            System.out.println("Você está no modo controle, altere o modo para jogar.");
+            return false;
+        }
         if (index > exclusivos.size() || index < 0) {
             System.out.println("Jogo inválido...");
             return false;
@@ -40,7 +46,7 @@ public class Psvita extends Videogame implements Portatil {
             return false;
         } else {
             System.out.println("Jogo escolhido: " + exclusivos.get(index));
-            bateria -= 10;      // Perde bateria em modo portátil ou controle.
+            bateria -= (5 * tempo);      // Perde bateria em modo portátil ou controle.
 
             return true;
         }

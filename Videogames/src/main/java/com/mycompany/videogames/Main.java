@@ -6,8 +6,10 @@ package com.mycompany.videogames;
     Videogame deve ter uma lista de exclusivos.
     O usuário deve ser capaz de adicionar exclusivos na lista e visualizar todos eles.
     Videogame deve ter um método para jogar algum jogo da lista de exclusivos.
+        - O método jogar jogo deve receber um índice e um tempo de jogo.
         - O método jogar jogo pode apenas printar uma mensagem dizendo qual jogo está jogando.
         - Caso o videogame seja um portátil, jogar deve gastar a bateria CASO em modo portátil.
+            - O gasto de bateria deve ser proporcional ao tempo jogado.
     Nintendo Switch, Playstation 5, Xbox Series e PSVita devem ser subclasses de Videogame.
     Nintendo Switch e PSVita são portáteis, recebendo métodos de checar bateria e trocar o modo.
         - O método checar bateria deve representar a bateria do videogame.
@@ -20,7 +22,7 @@ package com.mycompany.videogames;
     Crie uma instância para cada subclasse de videogame.
     Adicione ao menos 2 exclusivos para cada videogame criado.
     Teste funcionalidades de controle e de portáteis.
-    Utilize os métodos de jogar jogos, uma vez para cada videogame criado.
+    Utilize os métodos de jogar jogos ao menos uma vez para cada videogame criado.
  */
 public class Main {
 
@@ -30,7 +32,7 @@ public class Main {
         Xboxseries x = new Xboxseries(5000, "Processador de ultima geração, 4k com upscaling");
         NintendoSwitch n = new NintendoSwitch(4400, "RX 550 360p com upscaling");
         Playstation5 p = new Playstation5(3400, "Processador de última geração, 4k sem upscaling");
-        Psvita pv = new Psvita(1500, "Peças um pouco datadas, mas desbloqueado, com um\n catálogo cult e diverso");
+        Psvita pv = new Psvita(1500, "Peças um pouco datadas, mas desbloqueado, com um\ncatálogo cult e diverso");
 
         // Adicionando exclusivos
         x.addExclusivo("Halo");
@@ -41,6 +43,7 @@ public class Main {
         p.addExclusivo("God of War");
         p.addExclusivo("Gran Turismo");
         p.addExclusivo("Uncharted 4");
+        p.addExclusivo("Death Stranding");
 
         n.addExclusivo("Pokémon");
         n.addExclusivo("Mario");
@@ -50,6 +53,11 @@ public class Main {
         pv.addExclusivo("LittleBigPlanet Vita");
         pv.addExclusivo("Uncharted Golden Abyss");
         pv.addExclusivo("Soul Sacrifice Delta");
+
+        p.detalhes();
+        x.detalhes();
+        pv.detalhes();
+        n.detalhes();
 
         // Testando funcionalidades de ControleMovimento
         p.chacoalhar(678);
@@ -66,7 +74,7 @@ public class Main {
         System.out.println(pv.modo);     // Debug para testar se mudou o modo mesmo
         pv.trocaModo();
         System.out.println(pv.modo);     // Debug para testar se mudou o modo mesmo
-        
+
         // Printando os exclusivos!
         p.printarExclusivos();
         x.printarExclusivos();
@@ -74,12 +82,13 @@ public class Main {
         pv.printarExclusivos();
 
         // Jogando!!!
-        p.jogarJogo(0);
-        x.jogarJogo(1);
-        pv.jogarJogo(2);
-        n.jogarJogo(3);
-        
+        p.jogarJogo(0, 2);
+        x.jogarJogo(1, 2);
+        pv.jogarJogo(2, 1);
+        n.jogarJogo(3, 4);
+
         n.checaBateria();
         pv.checaBateria();
+
     }
 }
