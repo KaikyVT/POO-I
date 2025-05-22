@@ -1,6 +1,6 @@
 package com.mycompany.videogames;
 
-public class NintendoSwitch extends Videogame implements ControleMovimento, Portatil {
+public class NintendoSwitch extends Videogame implements IControleMovimento, IPortatil {
 
     public String modo = "Portátil";
     public int bateria = 100;
@@ -71,7 +71,7 @@ public class NintendoSwitch extends Videogame implements ControleMovimento, Port
 
     public void carregar() {
         System.out.println("Bateria carregada!");
-
+        bateria = 100;
     }
 
 }

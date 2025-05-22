@@ -1,6 +1,6 @@
 package com.mycompany.videogames;
 
-public class Playstation5 extends Videogame implements ControleMovimento {
+public class Playstation5 extends Videogame implements IControleMovimento {
 
     public Playstation5(double preco, String componentes) {
         super(preco, componentes);

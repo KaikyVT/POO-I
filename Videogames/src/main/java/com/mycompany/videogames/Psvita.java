@@ -1,6 +1,6 @@
 package com.mycompany.videogames;
 
-public class Psvita extends Videogame implements Portatil {
+public class Psvita extends Videogame implements IPortatil {
 
     public String modo = "Portátil";
     public int bateria = 100;
@@ -50,5 +50,10 @@ public class Psvita extends Videogame implements Portatil {
 
             return true;
         }
+    }
+    
+    public void carregar() {
+        System.out.println("Bateria carregada!");
+        bateria = 100;
     }
 }
